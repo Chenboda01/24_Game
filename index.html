@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 Game - Mathematical Puzzle Solver</title>
+    <meta name="description" content="Use four numbers and basic arithmetic operations (+, -, ×, ÷) to reach the target number 24. Each number must be used exactly once.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔢</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">24 Game</h1>
+            <p class="header__subtitle">Mathematical Puzzle Solver</p>
+        </header>
+
+        <main class="game">
+            <section class="game__instructions" aria-labelledby="instructions-heading">
+                <h2 id="instructions-heading" class="instructions__heading">How to Play</h2>
+                <p>You are given four numbers. Use basic arithmetic operations (+, -, ×, ÷) to reach the target number <strong>24</strong>. Each number must be used exactly once.</p>
+                <p>Example: Given 4, 7, 8, 8, a solution is: <code>(7 - (8 ÷ 8)) × 4 = 24</code></p>
+            </section>
+
+            <div class="game__area">
+                <section class="numbers" aria-labelledby="numbers-heading">
+                    <h2 id="numbers-heading" class="numbers__heading">Your Numbers</h2>
+                    <div class="numbers__grid">
+                        <div class="number-card" data-number="1">
+                            <span class="number-card__value">7</span>
+                        </div>
+                        <div class="number-card" data-number="2">
+                            <span class="number-card__value">8</span>
+                        </div>
+                        <div class="number-card" data-number="3">
+                            <span class="number-card__value">3</span>
+                        </div>
+                        <div class="number-card" data-number="4">
+                            <span class="number-card__value">9</span>
+                        </div>
+                    </div>
+                    <button id="new-game-btn" class="button button--primary" aria-label="Generate new random numbers">New Game</button>
+                </section>
+
+                <section class="operations" aria-labelledby="operations-heading">
+                    <h2 id="operations-heading" class="operations__heading">Operations</h2>
+                    <div class="operations__grid">
+                        <button class="operation-btn" data-operation="+">+</button>
+                        <button class="operation-btn" data-operation="-">−</button>
+                        <button class="operation-btn" data-operation="*">×</button>
+                        <button class="operation-btn" data-operation="/">÷</button>
+                        <button class="operation-btn" data-operation="(">(</button>
+                        <button class="operation-btn" data-operation=")">)</button>
+                        <button id="clear-btn" class="button button--secondary">Clear</button>
+                        <button id="backspace-btn" class="button button--secondary">⌫</button>
+                    </div>
+                </section>
+
+                <section class="expression" aria-labelledby="expression-heading">
+                    <h2 id="expression-heading" class="expression__heading">Your Expression</h2>
+                    <div class="expression__display" id="expression-display" aria-live="polite">Click numbers and operations to build expression</div>
+                    <div class="expression__result">
+                        <span class="expression__result-label">Result:</span>
+                        <span class="expression__result-value" id="result-value">-</span>
+                    </div>
+                    <button id="check-btn" class="button button--success" aria-label="Check if expression equals 24">Check Solution</button>
+                </section>
+
+                <section class="feedback" aria-labelledby="feedback-heading" hidden>
+                    <h2 id="feedback-heading" class="feedback__heading">Feedback</h2>
+                    <div class="feedback__message" id="feedback-message"></div>
+                </section>
+            </div>
+
+            <section class="stats">
+                <h2 class="stats__heading">Statistics</h2>
+                <div class="stats__grid">
+                    <div class="stat">
+                        <span class="stat__label">Games Played</span>
+                        <span class="stat__value" id="games-played">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__label">Solved</span>
+                        <span class="stat__value" id="games-solved">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__label">Time</span>
+                        <span class="stat__value" id="timer">00:00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>24 Game – A mathematical puzzle. Deployed on <a href="https://chenboda01.github.io/24_Game/" target="_blank" rel="noopener">GitHub Pages</a>.</p>
+            <p class="footer__credits">Built with HTML, CSS, and vanilla JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/game.js" type="module"></script>
+</body>
+</html>

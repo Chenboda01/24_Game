@@ -1,0 +1,42 @@
+{
+  "name": "24_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "lint:js": "eslint scripts/ --fix",
+    "lint:css": "stylelint styles/ --fix",
+    "lint:html": "htmlhint index.html",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "format": "prettier --write .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chenboda01/24_Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Chenboda01/24_Game/issues"
+  },
+  "homepage": "https://github.com/Chenboda01/24_Game#readme",
+  "devDependencies": {
+    "eslint": "^10.0.0",
+    "gh-pages": "^6.3.0",
+    "htmlhint": "^1.9.1",
+    "jest": "^30.2.0",
+    "parcel": "^2.16.4",
+    "prettier": "^3.8.1",
+    "stylelint": "^17.3.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
