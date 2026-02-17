@@ -2,7 +2,6 @@
   "name": "24_game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html --public-url ./",
